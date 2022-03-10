@@ -10,7 +10,7 @@ PtrToEmployee searchEmployeeByNumber(PtrToConstEmployee ptr, int tableSize, long
     {
         if (ptr->number == targetNumber) //check if the number(data) ptr is pointing to equals the target number
         {
-            return(PtrToEmployee) ptr; //return location of the number to callee; typecasted as ptrtoemployee bc we don't want it to be const
+            return(PtrToEmployee) ptr; //return location of the number to callee; typecasted as ptrtoemployee because we don't want it to be const
             //each employee is 32bytes, to pointer++ increases pointer address(row) value by 32bytes
         }
     }
@@ -26,6 +26,32 @@ PtrToEmployee searchEmployeeByName(PtrToConstEmployee ptr, int tableSize, char *
         if (strcmp(ptr->name,targetName) == 0) //check if the name(data) ptr is pointing to matches the target name
         {
             return(PtrToEmployee) ptr; 
+        }
+    }
+    return NULL;
+}
+
+PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char * targetPhone){
+    const PtrToConstEmployee endPtr = ptr + tableSize;
+
+    for (; ptr < endPtr; ptr++)
+    {
+        if (strcmp(ptr->phone,targetPhone) == 0) //check if the phone number data the ptr is pointing to matches the target phone number
+        {
+            return(PtrToEmployee) ptr; 
+        }
+    }
+    return NULL;
+}
+
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, double targetSalary){
+    const PtrToConstEmployee endPtr = ptr + tableSize;
+
+    for (; ptr < endPtr; ptr++)
+    {
+        if (ptr->salary == targetSalary) //check if the salary data the ptr is pointing to matches the target salary
+        {
+            return(PtrToEmployee) ptr;
         }
     }
     return NULL;
