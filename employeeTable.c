@@ -16,6 +16,7 @@ const int EmployeeTableEntries = sizeof(EmployeeTable)/sizeof(EmployeeTable[0]);
 
 //each member in struct Employee is 8 bytes
 //all members can be accessed by incrementing by equal distance
+/*
 void main(){
     printf("%d\n", sizeof(EmployeeTable));
     printf("%d\n", sizeof(EmployeeTable[0]));
@@ -24,3 +25,4 @@ void main(){
     printf("%d\n", sizeof(char*));  //compiler pads out entries in a structure smaller than the largest size
     printf("%d\n", sizeof(double));
 }
+*/
